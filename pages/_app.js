@@ -31,10 +31,9 @@ const GlobalStyle = createGlobalStyle`
 
     display: flex;
     flex-direction: column;
-    font-family: 'Lato', sans-serif;
   }
 
-  #__next {
+  #_next {
     flex: 1;
     display: flex;
     flex-direction: column;
