@@ -7,27 +7,27 @@ const FooterWrapper = styled.footer`
     flex-direction: column;
     font-family: ${({ theme }) => theme.fonts.second};
     font-size: 12px;
-  background-color: #00000070;
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  border-radius: ${({ theme }) => theme.borderRadius}; 
-  img {
-    width: 58px;
-    margin-right: 23px;
-  }
-  a {
-    color: white;
-    text-decoration: none;
-    transition: .3s;
-    &:hover,
-    &:focus {
-      opacity: .5;
+    background-color: #00000070;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    border-radius: ${({ theme }) => theme.borderRadius}; 
+    img {
+      width: 58px;
+      margin-right: 23px;
     }
-    span {
-      text-decoration: underline;
+    a {
+      color: white;
+      text-decoration: none;
+      transition: .3s;
+      &:hover,
+      &:focus {
+        opacity: .5;
+      }
+      span {
+        text-decoration: underline;
+      }
     }
-  }
 `;
 
 export default function Footer(props) {
