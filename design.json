@@ -1,0 +1,18 @@
+{
+    "theme": {
+      "colors": {
+        "background": "#121212",
+        "search": "#4CAF50"
+      },
+      "fonts": {
+          "main": "'Lato', sans-serif;",
+          "second": "'Montserrat', sans-serif;",
+          "scale": {
+              "title": "48px",
+              "subtitle": "24px"
+          }
+      },
+      "borderRadius": "16px"
+    }
+    
+}

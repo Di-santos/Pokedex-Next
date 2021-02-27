@@ -1,5 +1,5 @@
 /*
-O _app é uma ferramenta do styled components que permite um maior controle de escopo
+O _app é uma ferramenta do Next que permite um maior controle de escopo
 do css da aplicação, definindo temas reutilizáveis (quase um super root do css padrão)
 
 Desta forma, você pode predefinir, centralizar e conectar todo o css do seu projeto, 
@@ -12,7 +12,7 @@ next ou do SC, mas eles favorecem esta prática)
 */
 
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
-import db from '../db.json'
+import design from '../design.json'
 
 // Estilo global
 const GlobalStyle = createGlobalStyle`
@@ -25,7 +25,7 @@ const GlobalStyle = createGlobalStyle`
     min-width: 100vw;
   }
 
-  body {
+  body, html {
     margin: 0;
     padding: 0;
 
@@ -41,7 +41,7 @@ const GlobalStyle = createGlobalStyle`
 `
 
 // Tema da Aplicação
-const theme = db.theme
+const theme = design.theme
 
 // Instanciação (troca tema com global - global dentro de themeprovider)
 export default function App({ Component, pageProps }) {
