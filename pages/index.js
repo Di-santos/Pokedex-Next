@@ -23,16 +23,22 @@ Além disso, pode-se modularizar e dar import nos componentes já estilizados, c
 
 // Imports (node modules e diretórios locais)
 import Head from 'next/Head';
-import styled from 'styled-components'
+import {useRouter} from 'next/router'
+import {useState} from 'react';
 
 import Fundo from '../src/components/Fundo'
 import Welcome from '../src/components/welcome'
-import StateInput from '../src/components/state-input'
 import Search from '../src/components/search'
 import searchPokemon from '../src/functions/searchPokemon'
 
 // Default
 export default function Home() {
+    // Hook de roteamento do Next (Server Side Rendering, SEO e outras ferramentas do navegador)
+    const router = useRouter()
+
+    // States da Home (React Hooks)
+    const [inputContent,setInputContent] = useState("")
+
     return (
         <Fundo>
             <Head>
@@ -46,10 +52,16 @@ export default function Home() {
                 <p> Pokestats decolando na velocidade da luz! </p>
 
                 <Search>
+                    <form onSubmit={event => {
+                        // Evita o F5 na página
+                        event.preventDefault()
 
-                    <StateInput></StateInput>
-                    <button type="submit" >Buscar</button>
-
+                        router.push(`/results?pokemon=${inputContent}`)
+                        console.log("Consegui")
+                    }}>
+                        <input type="text" placeholder = "Digite o Pokémon aqui" onChange = {event => setInputContent(event.target.value)} ></input>
+                        <button type="submit" disabled = {inputContent.length === 0}> Buscar </button>
+                    </form>
                 </Search>
             </Welcome>
         </Fundo>

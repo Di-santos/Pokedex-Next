@@ -13,6 +13,14 @@ const Search = styled.div`
 
     background-color: ${({ theme})=> theme.colors.background};
     
+    form{
+        display: flex;
+        flex-direction: row;
+        flex: 1;
+        justify-content: space-between;
+        align-items: center;
+    }
+
     input{
         height: 50px;
         width: 350px;
@@ -31,6 +39,9 @@ const Search = styled.div`
         border-style: none;
     }
 
+    button:hover{
+        background-color: ${({ theme})=> theme.colors.searchHover};
+    }
 `
 
 
