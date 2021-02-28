@@ -1,8 +1,9 @@
 import styled from 'styled-components'
 
-const Area = styled.div`
-    height: 100vh;
-    width: 100vw;
+const Welcome = styled.div`
+    position: absolute;
+    height: 100px;
+    width: 500px;
 
     display: flex;
     flex: 1;
@@ -24,11 +25,4 @@ const Area = styled.div`
     
 `
 
-export default function Welcome(){
-    return(
-        <Area>
-            <h1> PokedexAPI </h1>
-            <p> Pokestats decolando na velocidade da luz! </p>
-        </Area>
-    )
-}
+export default Welcome

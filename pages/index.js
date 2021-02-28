@@ -21,31 +21,37 @@ Além disso, pode-se modularizar e dar import nos componentes já estilizados, c
 **/ 
 
 
-// Imports
+// Imports (node modules e diretórios locais)
+import Head from 'next/Head';
 import styled from 'styled-components'
-import design from '../design.json'
+
+import Fundo from '../src/components/Fundo'
 import Welcome from '../src/components/welcome'
-
-// Componentes
-const Fundo = styled.div`
-    height: 100vh;
-    width: 100vw;
-
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    justify-content: center;
-    align-items: center;
-
-    background-color: ${({ theme})=> theme.colors.background};
-    
-`
+import StateInput from '../src/components/state-input'
+import Search from '../src/components/search'
+import searchPokemon from '../src/functions/searchPokemon'
 
 // Default
 export default function Home() {
     return (
         <Fundo>
-            <Welcome/>
+            <Head>
+                <title>
+                    PokedexAPI
+                </title>
+            </Head>
+
+            <Welcome>
+                <h1> PokedexAPI </h1>
+                <p> Pokestats decolando na velocidade da luz! </p>
+
+                <Search>
+
+                    <StateInput></StateInput>
+                    <button type="submit" >Buscar</button>
+
+                </Search>
+            </Welcome>
         </Fundo>
     )
 }

@@ -11,6 +11,7 @@ next ou do SC, mas eles favorecem esta prática)
 
 */
 
+import Head from 'next/Head';
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
 import design from '../design.json'
 
@@ -47,6 +48,10 @@ const theme = design.theme
 export default function App({ Component, pageProps }) {
   return (
     <>
+      <Head>
+        <link rel="preconnect" href="https://fonts.gstatic.com"/>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Montserrat&display=swap" rel="stylesheet"/>
+      </Head>
       <ThemeProvider theme={theme}>
         <GlobalStyle />   
         <Component {...pageProps} />

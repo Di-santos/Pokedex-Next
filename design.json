@@ -2,14 +2,16 @@
     "theme": {
       "colors": {
         "background": "#121212",
-        "search": "#4CAF50"
+        "search": "#18ED4E",
+        "searchHover":"#0DFF6C"
       },
       "fonts": {
           "main": "'Lato', sans-serif;",
           "second": "'Montserrat', sans-serif;",
           "scale": {
-              "title": "48px",
-              "subtitle": "24px"
+              "title": "54px",
+              "subtitle": "22px",
+              "stats": "16px"
           }
       },
       "borderRadius": "16px"
