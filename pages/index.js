@@ -29,9 +29,12 @@ import {useState} from 'react';
 import Fundo from '../src/components/Fundo'
 import Welcome from '../src/components/welcome'
 import Search from '../src/components/search'
+
 import searchPokemon from '../src/functions/searchPokemon'
 
 // Default
+// No index, teremos inputs nativos do html, e no results, nosso próprio componente Input 
+
 export default function Home() {
     // Hook de roteamento do Next (Server Side Rendering, SEO e outras ferramentas do navegador)
     const router = useRouter()
@@ -48,19 +51,22 @@ export default function Home() {
             </Head>
 
             <Welcome>
+
+                <img src = '/images/gaming.png'style={{height: 150, width: 150}} ></img>
+
                 <h1> PokedexAPI </h1>
                 <p> Pokestats decolando na velocidade da luz! </p>
 
                 <Search>
-                    <form onSubmit={event => {
+                    <form onSubmit = {event => {
                         // Evita o F5 na página
                         event.preventDefault()
-
+                        
+                        // Destino
                         router.push(`/results?pokemon=${inputContent}`)
-                        console.log("Consegui")
                     }}>
-                        <input type="text" placeholder = "Digite o Pokémon aqui" onChange = {event => setInputContent(event.target.value)} ></input>
-                        <button type="submit" disabled = {inputContent.length === 0}> Buscar </button>
+                        <input type = "text" placeholder = "Digite o Pokémon aqui" onChange = {event => setInputContent(event.target.value)} ></input>
+                        <button type = "submit" disabled = {inputContent.length === 0}> Buscar </button>
                     </form>
                 </Search>
             </Welcome>

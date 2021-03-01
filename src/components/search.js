@@ -24,10 +24,12 @@ const Search = styled.div`
     input{
         height: 50px;
         width: 350px;
+        padding: 15px;
         background-color: white;
         font-family: ${({ theme})=> theme.fonts.second};
         border-radius: ${({ theme})=> theme.borderRadius};
         border-style: none;
+        outline:none;
     }
 
     button{
@@ -37,6 +39,8 @@ const Search = styled.div`
         border-radius: ${({ theme})=> theme.borderRadius};
         background-color: ${({ theme})=> theme.colors.search};
         border-style: none;
+        outline:none;
+        cursor:pointer;
     }
 
     button:hover{
