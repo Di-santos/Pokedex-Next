@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 const Fundo = styled.div`
+    box-sizing: border-box;
     min-height: 100vh;
     width: 100vw;
 

@@ -1,24 +1,23 @@
 import Head from 'next/Head';
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import {useRouter} from 'next/router'
-import qs from 'query-string'
+import axios from 'axios'
 
 import Fundo from '../src/components/Fundo'
 import Header from '../src/components/header'
 import Input from '../src/components/input'
-import Button from '../src/components/button'
+import PokeGrid from '../src/components/pokeGrid'
 import Pokemon from '../src/components/pokemon'
 
-import searchPokemon from '../src/functions/searchPokemon'
 
-export default function Results() {
+export default function Results({pokeInfo}) {
     // Hook de roteamento do Next (Server Side Rendering, SEO e outras ferramentas do navegador)
     const router = useRouter()
+    const firstPoke = router.query.pokemon
 
     // States da Home (React Hooks)
-    const [inputContent,setInputContent] = useState("")
-    const [pokeData, setPokeData] = useState([])
-
+    const [inputContent,setInputContent] = useState(firstPoke)
+    //{console.log(pokeInfo.filter(pokemon => pokemon.name.english.includes(inputContent)))}
 
     return (
         <Fundo>
@@ -33,22 +32,30 @@ export default function Results() {
                         <img src = '/images/gaming.png'style={{height: 60, width: 60, marginLeft: 30}} ></img>
                     </a>
 
-
-                <form onSubmit = {event => {
-                    // Evita o F5 na página
-                    event.preventDefault()
-                    
-                    router.push(`/results?pokemon=${inputContent}`)
-                    setPokeData(searchPokemon(inputContent))
-                }}>
-
+                <form>
                     <Input placeholder = "Pokémon" onChange = {event => setInputContent(event.target.value)}></Input>
-                    <Button type = "submit" disabled = {inputContent.length === 0}> Buscar </Button>
                 </form>
-                
-                <Button type = "submit" onClick = {event => setPokeData(searchPokemon('all'))}>Mostrar Pokedex </Button>
 
             </Header>
+
+            <PokeGrid>
+            {pokeInfo.map(pokemon => (
+                <Pokemon key = {pokemon.id}>
+                    <h1>{pokemon.id}</h1>
+                    <h1>{pokemon.name.english}</h1>
+                    <h2>[{pokemon.type}]</h2>
+                    <h3>{pokemon.base.hp}</h3>
+                </Pokemon>
+            ))
+            }
+            
+            </PokeGrid>
+
         </Fundo>
     )
+}
+
+Results.getInitialProps = async () =>{
+    const response = await axios.get('http://localhost:5000/search/')
+    return {pokeInfo: response.data}
 }

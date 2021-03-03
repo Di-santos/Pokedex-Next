@@ -30,7 +30,6 @@ import Fundo from '../src/components/Fundo'
 import Welcome from '../src/components/welcome'
 import Search from '../src/components/search'
 
-import searchPokemon from '../src/functions/searchPokemon'
 
 // Default
 // No index, teremos inputs nativos do html, e no results, nosso próprio componente Input 
@@ -62,8 +61,8 @@ export default function Home() {
                         // Evita o F5 na página
                         event.preventDefault()
                         
-                        // Destino
-                        router.push(`/results?pokemon=${inputContent}`)
+                        // Destino e query params
+                        router.push({pathname:`/results`, query:{pokemon:inputContent}})
                     }}>
                         <input type = "text" placeholder = "Digite o Pokémon aqui" onChange = {event => setInputContent(event.target.value)} ></input>
                         <button type = "submit" disabled = {inputContent.length === 0}> Buscar </button>
