@@ -1,12 +1,12 @@
 import Head from 'next/Head';
-import {useEffect, useState} from 'react';
+import {useState} from 'react';
 import {useRouter} from 'next/router'
 import axios from 'axios'
 
 import Fundo from '../src/components/Fundo'
 import Header from '../src/components/header'
 import Input from '../src/components/input'
-import PokeGrid from '../src/components/pokeGrid'
+import PokeWrapper from '../src/components/pokeWrapper'
 import Pokemon from '../src/components/pokemon'
 
 
@@ -32,24 +32,27 @@ export default function Results({pokeInfo}) {
                         <img src = '/images/gaming.png'style={{height: 60, width: 60, marginLeft: 30}} ></img>
                     </a>
 
-                <form>
                     <Input placeholder = "Pokémon" onChange = {event => setInputContent(event.target.value)}></Input>
-                </form>
 
             </Header>
 
-            <PokeGrid>
-            {pokeInfo.map(pokemon => (
-                <Pokemon key = {pokemon.id}>
-                    <h1>{pokemon.id}</h1>
-                    <h1>{pokemon.name.english}</h1>
-                    <h2>[{pokemon.type}]</h2>
-                    <h3>{pokemon.base.hp}</h3>
+            <PokeWrapper>
+            {pokeInfo.filter(pokemon => pokemon.name.english.includes(inputContent)).map(filteredPokemon => (
+                <Pokemon key = {filteredPokemon.id}>
+                    <h1>{filteredPokemon.id}</h1>
+                    <h1>{filteredPokemon.name.english}</h1>
+                    <h2>{filteredPokemon.type}</h2>
+                    <h3>{filteredPokemon.base.HP}</h3>
+                    <h3>{filteredPokemon.base.Attack}</h3>
+                    <h3>{filteredPokemon.base.Defense}</h3>
+                    <h3>{filteredPokemon.base.SpAttack}</h3>
+                    <h3>{filteredPokemon.base.SpDefense}</h3>
+                    <h3>{filteredPokemon.base.Speed}</h3>
                 </Pokemon>
-            ))
-            }
+                )
+            )}
             
-            </PokeGrid>
+            </PokeWrapper>
 
         </Fundo>
     )

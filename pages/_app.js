@@ -34,7 +34,7 @@ const GlobalStyle = createGlobalStyle`
     flex-direction: column;
   }
 
-  #_next {
+  #__next {
     flex: 1;
     display: flex;
     flex-direction: column;
