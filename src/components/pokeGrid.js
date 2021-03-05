@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const PokeWrapper = styled.div`
+const PokeGrid = styled.div`
     position: fixed;
     left: 50%;
     margin-top:16vh;
@@ -14,5 +14,5 @@ const PokeWrapper = styled.div`
     padding:40px;
     background-color: ${({ theme})=> theme.colors.background};
 `
-export default PokeWrapper
+export default PokeGrid
     

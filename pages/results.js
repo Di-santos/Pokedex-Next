@@ -6,7 +6,7 @@ import axios from 'axios'
 import Fundo from '../src/components/Fundo'
 import Header from '../src/components/header'
 import Input from '../src/components/input'
-import PokeWrapper from '../src/components/pokeWrapper'
+import PokeGrid from '../src/components/pokeGrid'
 import Pokemon from '../src/components/pokemon'
 
 
@@ -36,23 +36,14 @@ export default function Results({pokeInfo}) {
 
             </Header>
 
-            <PokeWrapper>
+            <PokeGrid>
             {pokeInfo.filter(pokemon => pokemon.name.english.includes(inputContent)).map(filteredPokemon => (
-                <Pokemon key = {filteredPokemon.id}>
-                    <h1>{filteredPokemon.id}</h1>
-                    <h1>{filteredPokemon.name.english}</h1>
-                    <h2>{filteredPokemon.type}</h2>
-                    <h3>{filteredPokemon.base.HP}</h3>
-                    <h3>{filteredPokemon.base.Attack}</h3>
-                    <h3>{filteredPokemon.base.Defense}</h3>
-                    <h3>{filteredPokemon.base.SpAttack}</h3>
-                    <h3>{filteredPokemon.base.SpDefense}</h3>
-                    <h3>{filteredPokemon.base.Speed}</h3>
-                </Pokemon>
+
+                <Pokemon key = {filteredPokemon.id} pokeStats = {filteredPokemon}/>
                 )
             )}
             
-            </PokeWrapper>
+            </PokeGrid>
 
         </Fundo>
     )
