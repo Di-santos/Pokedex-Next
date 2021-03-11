@@ -37,7 +37,7 @@ export default function Results({pokeInfo}) {
             </Header>
 
             <PokeGrid>
-            {pokeInfo.filter(pokemon => pokemon.name.english.includes(inputContent)).map(filteredPokemon => (
+            {pokeInfo.filter(pokemon => pokemon.name.english.startsWith(inputContent)).map(filteredPokemon => (
 
                 <Pokemon key = {filteredPokemon.id} pokeStats = {filteredPokemon}/>
                 )

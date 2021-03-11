@@ -9,30 +9,32 @@ const PokeWrapper = styled.div`
     height: 250px;
     width: 150px;
 
-    h3{
-        font-family: ${({ theme})=> theme.fonts.second};
-        font-size: 10px;
-        color: black;
-    }
 `
 const PokeHeader = styled.div`
     display: flex;
     flex-direction:row;
-    height: 50px;
-    width: 150px;
+    height: 52px;
+    width: 152px;
+    margin-top: -1px;
+    margin-left: -1px;
+
     align-items: center;
     justify-content: space-between;
+
+    overflow:hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 
     background-color:black;
     font-family: ${({ theme})=> theme.fonts.main};
     border-top-left-radius: ${({ theme})=> theme.borderRadius};
     border-top-right-radius: ${({ theme})=> theme.borderRadius};
-    font-size: 10px;
+    font-size: 8px;
 
     h1{
         color:white;
-        margin-left: 6px;
-        margin-right: 6px;
+        margin-left: 10px;
+        margin-right: 10px;
     }
 `
 const PokeType = styled.div`
@@ -44,8 +46,9 @@ const PokeType = styled.div`
 
     h2{
         font-family: ${({ theme})=> theme.fonts.second};
-        font-size: 15px;
-        color: black;   
+        font-size: 12px;
+        color: black;
+        letter-spacing: 2px;   
     }
 `
 
@@ -54,6 +57,21 @@ const PokeInfo = styled.div`
     width: 150px;
     background-color: red;
     border-radius: ${({ theme})=> theme.borderRadius};
+
+    h3{
+        display: flex;
+        justify-content:space-between;
+        letter-spacing: 1px;
+        font-family: ${({ theme})=> theme.fonts.second};
+        font-size: 10px;
+        color: black;
+        margin-right: 10px;
+        margin-left: 10px;
+        font-weight: 700;
+    }
+    strong {
+        color: #F5E03D;
+    }
 `
 
 export default function Pokemon({pokeStats}){
@@ -69,13 +87,22 @@ export default function Pokemon({pokeStats}){
             </PokeType>
 
             <PokeInfo>
-                <h3>HP: {pokeStats.base.HP}</h3>
-                <h3>Attack: {pokeStats.base.Attack}</h3>
-                <h3>Defense: {pokeStats.base.Defense}</h3>
-                <h3>Sp. Attack: {pokeStats.base.SpAttack}</h3>
-                <h3>Sp. Defense: {pokeStats.base.SpDefense}</h3>
-                <h3>Speed: {pokeStats.base.Speed}</h3>
+                <h3>HP: <strong> {pokeStats.base.HP}</strong></h3>
+                <h3>Attack: <strong> {pokeStats.base.Attack}</strong></h3>
+                <h3>Defense: <strong> {pokeStats.base.Defense}</strong></h3>
+                <h3>Sp. Attack: <strong> {pokeStats.base.SpAttack}</strong></h3>
+                <h3>Sp. Defense: <strong> {pokeStats.base.SpDefense}</strong></h3>
+                <h3>Speed: <strong> {pokeStats.base.Speed}</strong></h3>
             </PokeInfo>
         </PokeWrapper>
     )
 }
+
+/*
+                <h3>HP: <strong> {pokeStats.base.HP}</strong></h3>
+                <h3>Attack: <strong> {pokeStats.base.Attack}</strong></h3>
+                <h3>Defense: <strong> {pokeStats.base.Defense}</strong></h3>
+                <h3>Sp. Attack: <strong> {pokeStats.base.SpAttack}</strong></h3>
+                <h3>Sp. Defense: <strong> {pokeStats.base.SpDefense}</strong></h3>
+                <h3>Speed: <strong> {pokeStats.base.Speed}</strong></h3>
+*/
