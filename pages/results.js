@@ -50,6 +50,6 @@ export default function Results({pokeInfo}) {
 }
 
 Results.getInitialProps = async () =>{
-    const response = await axios.get('http://localhost:5000/search/')
-    return {pokeInfo: response.data}
+    const response = await axios.get('http://localhost:3000/api/pokedex')
+    return {pokeInfo: response.data.pokedex}
 }
