@@ -11,7 +11,7 @@ next ou do SC, mas eles favorecem esta prática)
 
 */
 
-import Head from 'next/Head';
+import Head from 'next/head';
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
 import design from '../design.json'
 
