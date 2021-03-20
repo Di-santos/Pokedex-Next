@@ -22,7 +22,7 @@ Além disso, pode-se modularizar e dar import nos componentes já estilizados, c
 
 
 // Imports (node modules e diretórios locais)
-import Head from 'next/Head';
+import Head from 'next/head';
 import {useRouter} from 'next/router'
 import {useState} from 'react';
 

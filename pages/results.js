@@ -1,9 +1,9 @@
-import Head from 'next/Head';
+import Head from 'next/head';
 import {useState} from 'react';
 import {useRouter} from 'next/router'
 import axios from 'axios'
 
-import Fundo from '../src/components/Fundo'
+import Fundo from '../src/components/fundo'
 import Header from '../src/components/header'
 import Input from '../src/components/input'
 import PokeGrid from '../src/components/pokeGrid'
