@@ -26,7 +26,7 @@ import Head from 'next/head';
 import {useRouter} from 'next/router'
 import {useState} from 'react';
 
-import Fundo from '../src/components/Fundo'
+import Fundo from '../src/components/fundo'
 import Welcome from '../src/components/welcome'
 import Search from '../src/components/search'
 
