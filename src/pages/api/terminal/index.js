@@ -1,4 +1,4 @@
-import info from '../../../src/db/data.json'
+import info from '../../../db/data.json'
 
 export default function handler(req, res) {
     try{
