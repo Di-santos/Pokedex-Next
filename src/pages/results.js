@@ -49,6 +49,6 @@ export default function Results({pokeInfo}) {
 }
 
 Results.getInitialProps = async () =>{
-    const response = await axios.get('https://pokedex-api-fast.vercel.app/api/pokedex')
+    const response = await axios.get('https://pokedex-fast.vercel.app/api/pokedex')
     return {pokeInfo: response.data.pokedex}
 }
