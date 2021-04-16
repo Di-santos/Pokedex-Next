@@ -1,4 +1,4 @@
-import pokedex from '../../../src/db/pokedex.json'
+import pokedex from '../../../db/pokedex.json'
 
 export default function handler(req, res) {
     try{
