@@ -13,14 +13,14 @@ next ou do SC, mas eles favorecem esta prática)
 
 import Head from 'next/head';
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
-import design from '../design.json'
+import design from '../../design.json'
 
 // Estilo global
 const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
   }
-  
+
   section{
     min-height: 100vh;
     min-width: 100vw;

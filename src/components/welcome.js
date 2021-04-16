@@ -1,18 +1,27 @@
 import styled from 'styled-components'
 
 const Welcome = styled.div`
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    height: 100px;
-    width: 500px;
-
     display: flex;
     flex: 1;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    @media (min-width: 770px){
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        height: 40vh;
+        width: 90vw;
+
+    }
+
+    @media (max-width: 770px){
+        width:100vw;
+        margin-top:50px;
+
+    }
 
     h1{
         font-size: ${({ theme})=> theme.fonts.scale.title};

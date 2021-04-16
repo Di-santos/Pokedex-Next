@@ -3,11 +3,11 @@ import {useState} from 'react';
 import {useRouter} from 'next/router'
 import axios from 'axios'
 
-import Fundo from '../src/components/fundo'
-import Header from '../src/components/header'
-import Input from '../src/components/input'
-import PokeGrid from '../src/components/pokeGrid'
-import Pokemon from '../src/components/pokemon'
+import Fundo from '../components/fundo'
+import Header from '../components/header'
+import Input from '../components/input'
+import PokeGrid from '../components/pokeGrid'
+import Pokemon from '../components/pokemon'
 
 
 export default function Results({pokeInfo}) {
@@ -35,9 +35,8 @@ export default function Results({pokeInfo}) {
                     <Input placeholder = "Pokémon" onChange = {event => setInputContent(event.target.value)}></Input>
 
             </Header>
-
             <PokeGrid>
-            {pokeInfo.filter(pokemon => pokemon.name.english.startsWith(inputContent)).map(filteredPokemon => (
+            {pokeInfo.filter(pokemon => pokemon.name.english.toLowerCase().startsWith(inputContent.toLowerCase())).slice(0,13).map(filteredPokemon => (
 
                 <Pokemon key = {filteredPokemon.id} pokeStats = {filteredPokemon}/>
                 )

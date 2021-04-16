@@ -13,6 +13,15 @@ const PokeGrid = styled.div`
 
     padding:40px;
     background-color: ${({ theme})=> theme.colors.background};
+
+    @media (max-width: 500px){
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-left: -15%;
+    }
+
 `
 export default PokeGrid
     

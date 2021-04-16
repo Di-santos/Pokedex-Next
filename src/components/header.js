@@ -13,9 +13,13 @@ const Header = styled.header`
 
     background-color: black;
     
-    form{
+    input{
         display: flex;
-        flex-direction: row
+        flex-direction: row;
+
+        @media (max-width: 500px){
+            width:180px;
+    }
     }
     button{
         margin-left: 30px;
