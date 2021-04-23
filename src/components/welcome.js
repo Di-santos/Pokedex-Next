@@ -30,6 +30,7 @@ const Welcome = styled.div`
 
     }
     p{
+        text-align: center;
         font-size: ${({ theme})=> theme.fonts.scale.subtitle};
         font-family: ${({ theme})=> theme.fonts.second};
         color: white;

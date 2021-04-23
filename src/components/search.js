@@ -13,6 +13,11 @@ const Search = styled.div`
 
     background-color: ${({ theme})=> theme.colors.background};
 
+    @media (max-width: 500px){
+        width: 200px;
+        height: 200px;
+    }
+
     form{
         display: flex;
         flex-direction: row;
@@ -20,7 +25,7 @@ const Search = styled.div`
         justify-content: space-between;
         align-items: center;
 
-        @media (max-width: 500px){
+        @media (max-width: 770px){
                 flex-direction: column;
             }
     }
