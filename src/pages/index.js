@@ -53,7 +53,7 @@ export default function Home() {
 
                 <img src = '/images/gaming.png'style={{height: 150, width: 150}} ></img>
 
-                <h1> PokedexAPI </h1>
+                <h1> Pokefast </h1>
                 <p> Pokestats decolando na velocidade da luz! </p>
 
                 <Search>
