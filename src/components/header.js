@@ -19,10 +19,8 @@ const Header = styled.header`
 
         @media (max-width: 500px){
             width:180px;
+        }
     }
-    }
-    button{
-        margin-left: 30px;
-    }
+    
 `
 export default Header

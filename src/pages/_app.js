@@ -23,7 +23,7 @@ const GlobalStyle = createGlobalStyle`
 
   section{
     min-height: 100vh;
-    min-width: 100vw;
+    max-width: 100vw;
   }
 
   body, html {

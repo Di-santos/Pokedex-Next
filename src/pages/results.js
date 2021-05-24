@@ -35,8 +35,9 @@ export default function Results({pokeInfo}) {
                     <Input placeholder = "Pokémon" onChange = {event => setInputContent(event.target.value)}></Input>
 
             </Header>
+            
             <PokeGrid>
-            {pokeInfo.filter(pokemon => pokemon.name.english.toLowerCase().startsWith(inputContent.toLowerCase())).slice(0,13).map(filteredPokemon => (
+            {pokeInfo.filter(pokemon => pokemon.name.english.toLowerCase().startsWith(inputContent.toLowerCase())).map(filteredPokemon => (
 
                 <Pokemon key = {filteredPokemon.id} pokeStats = {filteredPokemon}/>
                 )
