@@ -1,5 +1,5 @@
 # Pokedex-Next
-[Link de acesso](https://pokefast.vercel.app/)
+[ACESSE AQUI](https://pokefast.vercel.app/)
 
 # Telas
 ![image](https://user-images.githubusercontent.com/68029637/112148894-2c1b5280-8bbd-11eb-98f3-5db56988588d.png)
